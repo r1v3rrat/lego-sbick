@@ -1,7 +1,7 @@
 # lego-sbrick
 A ruby gem library for interfacing with the LEGO® compatible Power Functions bluetooth SBrick (https://www.sbrick.com/)
 
-## beta Build Instructions (NOT UPLOADED TO RUBYGEMS.ORG YET)
+## beta build Instructions (NOT UPLOADED TO RUBYGEMS.ORG YET)
 ```ruby
 git clone https://github.com/r1v3rrat/lego_sbrick.git
 gem build lego_sbrick.gemspec
