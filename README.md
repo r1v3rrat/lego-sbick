@@ -1,4 +1,4 @@
-# lego-sbick
+# lego-sbrick
 Ruby Gem for Lego® compatible SBrick Bluetooth power functions controller
 
 # PRE Alpha... checking in code so I can work on it from my raspberry pi.  Planning to submit to rubygems by the end of sept.  For now take a look.  I'll be refactoring repo for rubygems format in the next couple days
