@@ -1,35 +1,43 @@
 # lego-sbrick
-A ruby library for interfacing with the LEGO® compatible Power Functions bluetooth SBrick
+A ruby gem library for interfacing with the LEGO® compatible Power Functions bluetooth SBrick (https://www.sbrick.com/)
 
-# PRE Alpha... checking in code so I can work on it from my raspberry pi.  Planning to submit to rubygems by the end of sept.  For now take a look.  I'll be refactoring repo for rubygems format in the next couple days
-
+## beta Build Instructions (NOT UPLOADED TO RUBYGEMS.ORG YET(
 ```ruby
-# (1) make sure you have bluetooth 4+, know your bluethooth interface, address of your sbrick
+git clone https://github.com/r1v3rrat/lego_sbrick.git
+gem build lego_sbrick.gemspec
+gem install lego_sbrick-0.0.1.gem
+
+```
+## requirements
+(1) make sure you have bluetooth 4+, gatttool, know your bluethooth interface, and address of your sbrick
 #More info: https://social.sbrick.com/wiki/view/pageId/20/slug/linux-client-scripts
+(2) I have only tested on ruby-2.3.0 but I'm sure lower versions will work
 
-# (2) Use some ruby code:
+## Usage
+```ruby
+require 'rubygems'
+require 'lego_sbrick'
 
-# so you can see what is happening
+# if you want the details on what is happening
 Logging.logger.root.appenders = Logging.appenders.stdout
 Logging.logger.root.level = :debug
 
 # create object with your local interface and the remote address to the sbrick
 b = SBrick.new("hci0","00:07:80:D0:57:C3")
-b.version
-b.uptime
-b.resets
-b.temperature
-b.voltage
-b.led_test
+puts b.version
+puts b.uptime
+puts b.resets
+puts b.temperature
+puts b.voltage
+puts b.led_test
 
-# who cares about voltage and tempature?  Lets burn some rubber/train wheels...
+# who cares about voltage and tempature?  Hook up you sbrick using your car jumper cables and burn some plastic (don't actually do that)...
 # control all 4 channels with a single command...
 
 b.quick_drive([100,-50,:fw,:brake])
 # channel 0 -> 100% power clockwise
-# channel 0 -> 50% power counter clockwise
+# channel 1 -> 50% power counter clockwise
 # channel 2 -> free wheel... cut power but do not brake
 # channel 3 -> brake
 
-```
-
+# to keep things running use
