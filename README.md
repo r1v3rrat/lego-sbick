@@ -51,8 +51,8 @@ b.kill_keep_alive_thread!
 ## TODOS
 
 - publish to github
-- integrate with https://github.com/sdalu/ruby-ble (however it requires new libs than what comes with most distros for now)
 - support other atrributes like watchdog
+- eventually replace gatttol with https://github.com/sdalu/ruby-ble (however it requires newer libs than most distros have currently)
 
 ## other projects:
 https://github.com/search?utf8=%E2%9C%93&q=sbrick&type=Repositories&ref=searchresults
