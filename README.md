@@ -1,5 +1,5 @@
 # lego-sbrick
-Ruby Gem for Lego® compatible SBrick Bluetooth power functions controller
+A ruby library for interfacing with the LEGO® compatible Power Functions bluetooth SBrick
 
 # PRE Alpha... checking in code so I can work on it from my raspberry pi.  Planning to submit to rubygems by the end of sept.  For now take a look.  I'll be refactoring repo for rubygems format in the next couple days
 
@@ -14,7 +14,7 @@ Logging.logger.root.appenders = Logging.appenders.stdout
 Logging.logger.root.level = :debug
 
 # create object with your local interface and the remote address to the sbrick
-b = RSbrick.new("hci0","00:07:80:D0:57:C3")
+b = SBrick.new("hci0","00:07:80:D0:57:C3")
 b.version
 b.uptime
 b.resets
